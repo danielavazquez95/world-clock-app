@@ -1,9 +1,7 @@
 
 export const getListTimeZones = async () => {
 
-    const resp = await fetch('https://worldclock-app.herokuapp.com/api/timezones', {
-        mode: 'cors',
-    });
+    const resp = await fetch('https://worldclock-app.herokuapp.com/api/timezones');
     const data = await resp.json();
 
     return data;
@@ -23,14 +21,12 @@ export const uploadDB= async (timezone) => {
        const resp = await fetch('https://worldclock-app.herokuapp.com/api/timezones/dbupload', {
         method: 'POST',
         mode: 'cors',
-        body: JSON.stringify(timezone),
+        body: timezone,
         headers: { 'Content-Type': 'application/json' }
     });
-
     const data = await resp.json();
 
     return data;
-
 };
 
 

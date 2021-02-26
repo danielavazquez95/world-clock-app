@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Card } from './components/Card';
-import { SearchInput } from './components/SearchInput';
+import { Footer } from './components/Footer';
 import { loadDB } from './helpers/fetchTimezone';
-
-
+import { SearchInput } from './components/SearchInput';
 
 export const App = () => {
 
@@ -42,13 +41,11 @@ export const App = () => {
                             <Card name={data.name} id={data.id} handleDeleteOperation={handleDeleteOperation}/>
                         </div>
                         )
-                            
                     })
                   }
                 </div>
             </div>
-      
-    
+            <Footer/>
          </>
 
     )

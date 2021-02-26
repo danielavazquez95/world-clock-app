@@ -3,8 +3,6 @@ import Autosuggest from 'react-autosuggest';
 import { getListTimeZones, uploadDB } from '../helpers/fetchTimezone';
 import { theme } from '../helpers/themeStylesAutocomplete';
 
-
-
 export const SearchInput = ({handleNewTimezone}) => {
   
     const [listData, setListData] = useState([]);
@@ -14,9 +12,7 @@ export const SearchInput = ({handleNewTimezone}) => {
     useEffect(() => {
 
         getListTimeZones()
-        .then(data => 
-            setListData(data)
-        );
+        .then(data =>  setListData(data));
        
     }, [])
 
@@ -33,8 +29,6 @@ export const SearchInput = ({handleNewTimezone}) => {
     
     const getSuggestionValue = suggestion => {
 
-        console.log('suggestion',suggestion)
-       
         uploadDB({name: suggestion.name})
         .then(resp => {
           if(resp.message){
@@ -42,7 +36,7 @@ export const SearchInput = ({handleNewTimezone}) => {
           }
           handleNewTimezone({name: resp.name});
         })
-        
+      
         return suggestion.name
     };
 
@@ -61,7 +55,6 @@ export const SearchInput = ({handleNewTimezone}) => {
         setSuggestions(getSuggestions(value));
     };
   
-
     const onSuggestionsClearRequested = () => {
         setSuggestions([]);
     };
@@ -71,7 +64,6 @@ export const SearchInput = ({handleNewTimezone}) => {
         value,
         onChange: onChange
       };
-
 
     return (
        
