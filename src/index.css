@@ -9,6 +9,13 @@ body {
 	min-height: 85vh;
 }
 
+.title-app{	
+	font-size: 40px;
+	font-weight: bold;
+	margin-Left: auto;
+	margin-Right :auto;
+}
+
 .card-clock {
 	animation: appear 500ms ease-out forwards;
 	background: white;
@@ -24,25 +31,15 @@ body {
 	cursor: pointer;
 }
 
-.card-title {
-	font-weight: bold;
-};
 
-.title-app{	
-	font-size: 40px;
-	font-weight: bold;
-	margin-Left: auto;
-	margin-Right :auto;
-}
-
-.card-text{
-	color: green;	
-	font-size: 25px;
-	font-weight: bold;
-}
 .card-subtitle{
 	font-size: 19px;
 }
+
+.card-text{
+	font-size: 25px;
+}
+
 .spinner {
 
 	animation: spin 1s ease infinite;

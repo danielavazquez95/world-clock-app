@@ -27,9 +27,9 @@ export const Card = ({name, id, handleDeleteOperation}) => {
                         : 
                         <>
                             <i className="fas fa-times text-danger mx-2" onClick={handlerClickDelete}/>
-                            <h5 className="card-title text-center mb-2">{timezone.timezone}</h5>
-                            <h6 className="card-subtitle text-center my-2 text-muted">{timezone.datetime.slice(0,10)}</h6>
-                            <p className="card-text text-center my-2">{timezone.datetime.slice(11,16)}</p>
+                            <h5 className="card-title text-dark text-center mb-2">{timezone.timezone}</h5>
+                            <h6 className="card-subtitle text-muted text-center my-2 ">{timezone.datetime.slice(0,10)}</h6>
+                            <p className="card-text text-success text-center my-2">{timezone.datetime.slice(11,16)}</p>
                         </>
                         }
                     </div>

@@ -29,7 +29,7 @@ export const App = () => {
             <div className="container-app">
                 <div className="container">
                     <div className="row d-flex justify-content-center align-items-center">
-                        <h1 className="title-app text-center my-4">World clock app</h1>
+                        <h1 className="title-app text-dark text-center my-4">World clock app</h1>
                         <div className="search-input">
                             <SearchInput handleNewTimezone={handleNewTimezone} />
                         </div>
@@ -38,7 +38,7 @@ export const App = () => {
                         { 
                         timeDataBase.map((data) => {
                             return(
-                            <div key={uuidv4()} className="col-sm-4">    
+                            <div key={uuidv4()} className="col-sm-6 col-md-4">    
                                 <Card name={data.name} id={data.id} handleDeleteOperation={handleDeleteOperation}/>
                             </div>
                             )
