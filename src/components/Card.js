@@ -9,7 +9,7 @@ export const Card = ({name, id, handleDeleteOperation}) => {
         getTimeZone(name)
         .then(data =>setTimezone(data))
      
-    }, [])
+    }, [name])
    
     const handlerClickDelete = () => {
         deleteDB(id);
@@ -19,7 +19,7 @@ export const Card = ({name, id, handleDeleteOperation}) => {
     return (
         <>
             {   
-                <div className="card card-clock my-2 mx-1 center-block">
+                <div className="card card-clock my-2 center-block">
                     <div className="card-body">
                         { 
                             (timezone.unixtime === undefined ) ?

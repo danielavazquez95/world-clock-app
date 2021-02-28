@@ -9,7 +9,7 @@ export const theme = {
       marginLeft: 'auto'
     },
     input: {
-      width: 390,
+      width: 330,
       height: 50,
       padding: '10px 20px',
       fontWeight: 300,
@@ -31,7 +31,7 @@ export const theme = {
       display: 'block',
       position: 'absolute',
       top: 51,
-      width: 390,
+      width: 330,
       border: '1px solid #aaa',
       backgroundColor: '#fff',
       fontWeight: 300,

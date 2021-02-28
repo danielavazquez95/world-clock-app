@@ -1,7 +1,12 @@
 body { 
 	background-color: #E0E0E0;
 	font-family: 'Roboto', sans-serif;
+	height: 100vh;
  
+}
+
+.container-app{
+	min-height: 85vh;
 }
 
 .card-clock {
@@ -13,6 +18,7 @@ body {
 	min-width: 154px;
 	overflow: hidden;
 	position: relative;
+
 }
 .card-clock i {
 	cursor: pointer;
@@ -21,7 +27,6 @@ body {
 .card-title {
 	font-weight: bold;
 };
-
 
 .title-app{	
 	font-size: 40px;
@@ -55,7 +60,6 @@ body {
 	
 }
 
-
 @keyframes spin {
 	0% {
 	  transform: rotate(0deg);
@@ -66,15 +70,14 @@ body {
 	}
   }
 
-.container{
-	min-height: 84vh;
+.footer{
+	bottom: 0;
+	height: 15vh;
+	
 }
 
-.footer {
-	bottom: 0;
-	padding-top: 3em;
-	position: relative;
-	font-family: 'Open Sans', sans-serif;  
-	height: 15vh;
-	width: 100%;
+@media (max-width: 500px) {
+    .footer{
+        height: auto;
+    }
 }

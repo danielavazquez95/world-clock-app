@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Autosuggest from 'react-autosuggest';
+import Swal from 'sweetalert2';
 import { getListTimeZones, uploadDB } from '../helpers/fetchTimezone';
 import { theme } from '../helpers/themeStylesAutocomplete';
 
@@ -16,7 +17,6 @@ export const SearchInput = ({handleNewTimezone}) => {
        
     }, [])
 
-
     const getSuggestions = value => {
         const inputValue = value.trim().toLowerCase();
         const inputLength = inputValue.length;
@@ -26,17 +26,8 @@ export const SearchInput = ({handleNewTimezone}) => {
         );
       };
 
-    
     const getSuggestionValue = suggestion => {
 
-        uploadDB({name: suggestion.name})
-        .then(resp => {
-          if(resp.message){
-            return;
-          }
-          handleNewTimezone({name: resp.name});
-        })
-      
         return suggestion.name
     };
 
@@ -46,8 +37,7 @@ export const SearchInput = ({handleNewTimezone}) => {
         </div>
       );
 
-
-    const onChange = (event, { newValue }) => {
+    const onChange = (event, { newValue}) => {
         setValue(newValue);
     };
   
@@ -57,6 +47,26 @@ export const SearchInput = ({handleNewTimezone}) => {
   
     const onSuggestionsClearRequested = () => {
         setSuggestions([]);
+    };
+
+    const onSuggestionSelected = (event, {suggestion}) => {
+
+      const suggestionData = {name: suggestion.name, id: Math.floor(Math.random() * 100)};
+
+      uploadDB(suggestionData)
+      .then(resp => {
+        if(resp.message){
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'The timezone already exists'
+          })
+          return;
+        }
+        handleNewTimezone(suggestionData);
+      });
+    
+      setValue('');
     };
 
     const inputProps = {
@@ -75,6 +85,8 @@ export const SearchInput = ({handleNewTimezone}) => {
                 renderSuggestion={renderSuggestion}
                 inputProps={inputProps}
                 theme={theme}
+                onSuggestionSelected={onSuggestionSelected}
+               
             />
     );
 };

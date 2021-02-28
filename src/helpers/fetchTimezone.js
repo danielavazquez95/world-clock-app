@@ -13,15 +13,13 @@ export const getTimeZone = async (timezone) => {
     const data = await resp.json();
 
     return data;
-
 };
 
 export const uploadDB= async (timezone) => {
 
-       const resp = await fetch('https://worldclock-app.herokuapp.com/api/timezones/dbupload', {
+    const resp = await fetch('https://worldclock-app.herokuapp.com/api/timezones/dbupload', {
         method: 'POST',
-        mode: 'cors',
-        body: timezone,
+        body: JSON.stringify(timezone),
         headers: { 'Content-Type': 'application/json' }
     });
     const data = await resp.json();
@@ -40,10 +38,10 @@ export const loadDB = async () => {
 };
 
 export const deleteDB = async (id) => {
-   await fetch(`https://worldclock-app.herokuapp.com/api/timezones/dbdelete/${id}`, {
-    method: 'DELETE',
-    mode: 'cors',
-});
+    const resp = await fetch(`https://worldclock-app.herokuapp.com/api/timezones/dbdelete/${id}`, {
+    method: 'DELETE'
+    });
+    const data = await resp.json();
 
+    return data;
 };
-
