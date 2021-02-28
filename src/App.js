@@ -29,7 +29,7 @@ export const App = () => {
             <div className="container-app">
                 <div className="container">
                     <div className="row d-flex justify-content-center align-items-center">
-                        <h1 className="title-app text-dark text-center my-4">World clock app</h1>
+                        <h1 className="title-app text-dark text-center my-3">World<span className="text-danger">Clock</span></h1>
                         <div className="search-input">
                             <SearchInput handleNewTimezone={handleNewTimezone} />
                         </div>

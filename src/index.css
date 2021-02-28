@@ -11,7 +11,6 @@ body {
 
 .title-app{	
 	font-size: 40px;
-	font-weight: bold;
 	margin-Left: auto;
 	margin-Right :auto;
 }
@@ -30,7 +29,6 @@ body {
 .card-clock i {
 	cursor: pointer;
 }
-
 
 .card-subtitle{
 	font-size: 19px;
