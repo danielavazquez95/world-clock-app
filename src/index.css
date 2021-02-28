@@ -1,11 +1,11 @@
 body { 
 	background-color: #E0E0E0;
 	font-family: 'Roboto', sans-serif;
-	height: 100vh;
+
 }
 
 .container-app{
-	min-height: 85vh;
+	min-height: 84vh;
 }
 
 .title-app{	
@@ -66,4 +66,12 @@ body {
 
 .footer{
 	min-height: 15vh;
+	min-width: 100%;
 }
+
+@media (min-height: 850px) {
+    .container-app{
+		min-height: 85vh;
+	
+    }    
+} 

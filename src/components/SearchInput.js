@@ -26,10 +26,7 @@ export const SearchInput = ({handleNewTimezone}) => {
         );
       };
 
-    const getSuggestionValue = suggestion => {
-
-        return suggestion.name
-    };
+    const getSuggestionValue = suggestion => suggestion.name;
 
     const renderSuggestion = suggestion => (
         <div>
